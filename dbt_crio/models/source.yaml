@@ -1,0 +1,6 @@
+version: 2
+sources:
+  - name: crio
+    schema: FIVETRAN_METADATA_STG_FIVETRAN_PLATFORM
+    tables:
+      - name: 
