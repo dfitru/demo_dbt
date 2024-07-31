@@ -1,0 +1,64 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+with  stg_Subject as (
+  select
+    subject_key,
+    address_last_checked_user_key,
+    do_not_text,
+    gender,
+    has_login
+    is_email_verified,
+    is_finance_screen_fail_allocation,
+    is_finance_screen_fail_allocation_override,
+    patient_key,
+    pay_subject_manually,
+    sex,
+    site_key,
+    social_security_last_checked_user_key,
+    status,
+    stipend_card_key,
+    study_arm_key,
+    study_key,
+    address1,
+    address2,
+    city,
+    email,
+    first_name,
+    home_phone,
+    initials,
+    last_name,
+    middle_name,
+    mobile_phone,
+    notes,
+    old_passwords,
+    password,
+    patient_id,
+    phone,
+    preferred_contact_method,
+    prepaid_access_code,
+    randomization_id,
+    social_security_number,
+    state,
+    subject_entered_email,
+    subject_external_id,
+    work_phone,
+    zip_code,
+    address_last_checked_date,
+    birth_date,
+    date_created,
+    date_last_login,
+    last_updated,
+    notes_date,
+    password_last_updated,
+    randomization_date,
+    social_security_last_checked_date
+
+  from
+    PC_FIVETRAN_DB.BIGQUERY_DB_CRIO_DATA.Subject
+)
+
+select * from stg_Subject

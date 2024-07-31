@@ -1,0 +1,78 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+with stg_Patient as (
+  select
+    latitude,
+    longitude,
+    patient_key,
+    do_not_call,
+    do_not_email,
+    do_not_text,
+    emergency_contact1_relationship,
+    emergency_contact2_relationship,
+    gender,
+    last_consent_patient_interaction_key,
+    last_interaction_duration,
+    last_interaction_key,
+    last_interaction_study_key,
+    last_interaction_system_entity_key,
+    last_interaction_total,
+    last_interaction_type,
+    last_interaction_user_key,
+    manual_status,
+    organization_key,
+    rating,
+    referral_source_key,
+    sex,
+    site_key,
+    status,
+    temp_patient_list_key,
+    update_solr_index,
+    address1,
+    address2,
+    alternative_address,
+    alternative_geo_address,
+    callback_details,
+    city,
+    country_code,
+    email,
+    emergency_contact1_first_name,
+    emergency_contact1_last_name,
+    emergency_contact1_phone,
+    emergency_contact2_first_name,
+    emergency_contact2_last_name,
+    emergency_contact2_phone,
+    external_id,
+    first_name,
+    geo_address,
+    geo_address_formatted,
+    home_phone,
+    last_interaction_details,
+    last_name,
+    middle_name,
+    mobile_phone,
+    notes,
+    patient_id,
+    social_security_number,
+    state,
+    work_phone,
+    zip_code,
+    patient_external_id,
+    birth_date,
+    callback_date,
+    date_created,
+    geo_updated,
+    last_consent_date,
+    last_interaction_date,
+    last_updated,
+    notes_date,
+    status_date
+
+  from
+    PC_FIVETRAN_DB.BIGQUERY_DB_CRIO_DATA.Patient
+)
+
+select * from stg_Patient

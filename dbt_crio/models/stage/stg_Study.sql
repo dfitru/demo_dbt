@@ -1,0 +1,50 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+WITH stg_study AS (
+  SELECT
+    has_new_esource,
+    study_key,
+    allow_data_lock,
+    allow_export,
+    clinical_trial_key,
+    default_study_arm_key,
+    finance_status,
+    has_carry_forward,
+    has_pi_sign_off,
+    has_subject_login,
+    initial_status,
+    invoice_amount,
+    invoice_status,
+    is_active,
+    is_edc,
+    is_recruiting_configured,
+    organization_key,
+    parent_study_key,
+    secure_configuration,
+    site_key,
+    sponsor_key,
+    status,
+    study_type,
+    target_enrollment,
+    template_status,
+    telehealth_meeting_type,
+    currency_code,
+    description,
+    external_id,
+    indications,
+    nickname,
+    protocol_number,
+    sandbox_password,
+    sandbox_username,
+    sponsor_site_id,
+    study_template_version_uid,
+    import_id,
+    date_created,
+    last_updated
+  FROM PC_FIVETRAN_DB.BIGQUERY_DB_CRIO_DATA.study
+)
+SELECT
+    * FROM stg_study
